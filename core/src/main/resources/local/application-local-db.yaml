@@ -1,6 +1,6 @@
-database:
-  driver: org.h2.Driver
-  url: jdbc:h2:mem:localdb;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
-  user: sa
-  password: ""
-  sqlLogging: true
+#database:
+#  driver: org.h2.Driver
+#  url: jdbc:h2:mem:localdb;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+#  user: sa
+#  password: ""
+#  sqlLogging: true
