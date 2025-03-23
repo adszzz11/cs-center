@@ -17,7 +17,7 @@ allprojects {
     }
     apply(plugin = "kotlin")
     apply(plugin = "kotlin-spring")
-    apply(plugin = "io.spring.dependency-management")
+//    apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.springframework.boot")
     java {
         toolchain {
@@ -34,12 +34,8 @@ allprojects {
     dependencies {
         // kotlin default
         implementation("org.jetbrains.kotlin:kotlin-reflect")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-        implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-        implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml")
 
-        runtimeOnly("com.h2database:h2")
+//        testRuntimeOnly("com.h2database:h2")
 
         /**
          * Kotest default
@@ -50,15 +46,11 @@ allprojects {
         testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
         testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
         testImplementation("io.kotest:kotest-property:$kotestVersion")
-        testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
 
         /**
          * Test Default
          */
-        testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("io.projectreactor:reactor-test")
         testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-        testImplementation("org.springframework.security:spring-security-test")
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
         /**
@@ -66,16 +58,10 @@ allprojects {
          */
         implementation("io.github.microutils:kotlin-logging-jvm:2.0.11")
     }
-}
-
-subprojects {
-    allOpen {
-//        annotation("jakarta.persistence.Entity")
-//        annotation("jakarta.persistence.MappedSuperclass")
-//        annotation("jakarta.persistence.Embeddable")
-    }
-
     tasks.withType<Test> {
         useJUnitPlatform()
     }
 }
+//
+// subprojects {
+// }
